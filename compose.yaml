@@ -1,0 +1,10 @@
+services:
+    backend:
+      image: ghcr.io/projkov/fhirpath-py-as-service:3581447a60e2e6803b940f0ad025f3ff460dcc0f
+      ports:
+        - '5000:5000'
+    frontend:
+      image: ghcr.io/projkov/fhirpath-ui:3fd84e409876449f96ec4637a2e60b4d4203f6df
+      ports:
+        - '3000:3000'
+      command: yarn start
