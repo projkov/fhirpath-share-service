@@ -17,9 +17,9 @@ services:
     ports:
     - '5000:5000'
   frontend:
-    image: ghcr.io/projkov/fhirpath-ui:b36278bed01db0e3d6cc5c9ae4aece60ba722dfc
+    image: ghcr.io/projkov/fhirpath-ui:f2d7afdce7cddd277f64b97a8fdbcc17243bfdf7
     environment:
       REACT_APP_FHIRPATH_URL: https://api.fhirpath.me
     ports:
     - '3000:3000'
-    command: yarn start
+    command: yarn prod
