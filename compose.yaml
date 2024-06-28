@@ -18,6 +18,8 @@ services:
     - '5000:5000'
   frontend:
     image: ghcr.io/projkov/fhirpath-ui:35db16d8317c9f838db2120764eb9586cb9649f8
+    environment:
+      FHIRPATH_URL: https://api.fhirpath.me
     ports:
     - '3000:3000'
     command: yarn start
