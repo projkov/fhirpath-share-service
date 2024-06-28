@@ -18,6 +18,15 @@ jobs:
             FOLDER_NAME="fhirpath-share-service"
             REPO_URL="https://github.com/projkov/fhirpath-share-service"
 
+            if ! command -v docker &> /dev/null
+            then
+                echo "Docker could not be found. Installing Docker..."
+                curl -fsSL https://get.docker.com -o get-docker.sh
+                sh get-docker.sh
+                sudo usermod -aG docker $USER
+                newgrp docker
+            fi
+
             # Check if the folder exists
             if [ -d "$FOLDER_NAME" ]; then
               cd $FOLDER_NAME
