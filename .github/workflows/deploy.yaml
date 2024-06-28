@@ -1,15 +1,33 @@
-name: remote ssh command
-on: [push]
+name: Deploy
+on:
+  push:
+    branches:
+      - main
 jobs:
-
   build:
-    name: Build
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
-    - name: executing remote ssh commands using password
+    - name: executing remote ssh commands
       uses: appleboy/ssh-action@v1.0.3
       with:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USER }}
         key: ${{ secrets.SSH_KEY }}
-        script: whoami
+        script: |
+            FOLDER_NAME="fhirpath-share-service"
+            REPO_URL="https://github.com/projkov/fhirpath-share-service"
+
+            # Check if the folder exists
+            if [ -d "$FOLDER_NAME" ]; then
+              cd $FOLDER_NAME
+              docker compose stop
+              git pull origin main
+            else
+              mkdir $FOLDER_NAME
+              cd $FOLDER_NAME
+              git clone $REPO_URL .
+            fi
+
+            docker compose pull
+            docker compose up -d
