@@ -22,4 +22,4 @@ services:
       REACT_APP_FHIRPATH_URL: https://api.fhirpath.me
     ports:
     - '3000:3000'
-    command: yarn prod
+    command: yarn start
