@@ -17,7 +17,7 @@ services:
     ports:
     - '5000:5000'
   frontend:
-    image: ghcr.io/projkov/fhirpath-ui:664ffdb66be64df61d909b4acdb613c468e6a8c6
+    image: ghcr.io/projkov/fhirpath-ui:1d8b3b29061bf66831a75f256b93ea0d18f1f0d4
     environment:
       REACT_APP_FHIRPATH_URL: https://api.fhirpath.me
     ports:
