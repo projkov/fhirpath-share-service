@@ -20,6 +20,7 @@ services:
     image: ghcr.io/projkov/fhirpath-ui:30b65207788f35f9dcb0e449578a493bfa5e6193
     environment:
       REACT_APP_FHIRPATH_URL: https://api.fhirpath.me
+      REACT_APP_GA4ID: ${{ secrets.REACT_APP_GA4ID }}
     ports:
     - '3000:3000'
     command: yarn start
