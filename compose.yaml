@@ -17,7 +17,7 @@ services:
     ports:
     - '5000:5000'
   frontend:
-    image: ghcr.io/projkov/fhirpath-ui:6093161e4aeb3abacaaa0be740e4b0cda9f3e0b9
+    image: ghcr.io/projkov/fhirpath-ui:bc880b944011a413cb4c1a07d4639f79e4dd69bd
     env_file:
       - .env
     ports:
