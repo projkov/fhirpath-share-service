@@ -12,6 +12,7 @@ services:
     depends_on:
       - frontend
       - backend
+      - sage
   backend:
     image: ghcr.io/projkov/fhirpath-py-as-service:3581447a60e2e6803b940f0ad025f3ff460dcc0f
     ports:
@@ -22,4 +23,11 @@ services:
       - .env
     ports:
     - '3000:3000'
+    command: yarn start
+  sage:
+    image: ghcr.io/projkov/sage:649d0edc88c87cac48916cd1d968187d6d8682e7
+    env_file:
+      - .env-sage
+    ports:
+    - '3001:3000'
     command: yarn start
