@@ -25,7 +25,7 @@ services:
     - '3000:3000'
     command: yarn start
   sage:
-    image: ghcr.io/projkov/sage:649d0edc88c87cac48916cd1d968187d6d8682e7
+    image: ghcr.io/projkov/sage:c8d670b58e39caf38fd42d1f72cbcb390c862e6e
     env_file:
       - .env-sage
     ports:
