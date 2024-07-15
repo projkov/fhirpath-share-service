@@ -18,12 +18,11 @@ services:
     ports:
     - '5000:5000'
   frontend:
-    image: ghcr.io/projkov/fhirpath-ui:50e4c18082dfd0d5a396605ef087a98bbbabd1fe
+    image: ghcr.io/projkov/fhirpath-ui:e60b8c30477e331325f569fe58167467f2037de0
     env_file:
       - .env
     ports:
-    - '3000:3000'
-    command: serve -s build -l 3000
+    - '3000:80'
   sage:
     image: ghcr.io/projkov/sage:c8d670b58e39caf38fd42d1f72cbcb390c862e6e
     env_file:
