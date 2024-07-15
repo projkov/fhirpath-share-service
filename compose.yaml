@@ -18,11 +18,12 @@ services:
     ports:
     - '5000:5000'
   frontend:
-    image: ghcr.io/projkov/fhirpath-ui:e60b8c30477e331325f569fe58167467f2037de0
+    image: ghcr.io/projkov/fhirpath-ui:8db3e9b33fef7512e0b280b4704e0752590086a1
     env_file:
       - .env
     ports:
-    - '3000:80'
+    - '3000:3000'
+    command: yarn start
   sage:
     image: ghcr.io/projkov/sage:c8d670b58e39caf38fd42d1f72cbcb390c862e6e
     env_file:
