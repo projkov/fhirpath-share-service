@@ -11,14 +11,9 @@ services:
       CERTBOT_EMAIL: prozskov@gmail.com
     depends_on:
       - frontend
-      - backend
       - sage
-  backend:
-    image: ghcr.io/projkov/fhirpath-py-as-service:3581447a60e2e6803b940f0ad025f3ff460dcc0f
-    ports:
-    - '5000:5000'
   frontend:
-    image: ghcr.io/projkov/fhirpath-ui:b0fee8a9137ae4015e0f9d20267f39cbe12c80c2
+    image: ghcr.io/projkov/fhirpath-ui:6159e8bd342715d26aa75b4b37e9496acf675c09
     ports:
     - '3000:80'
   sage:
