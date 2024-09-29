@@ -13,7 +13,7 @@ services:
       - frontend
       - sage
   frontend:
-    image: ghcr.io/projkov/fhirpath-ui:6159e8bd342715d26aa75b4b37e9496acf675c09
+    image: ghcr.io/projkov/fhirpath-ui:5aae0182736f7b3df119d5dde94306ae95329ea8
     ports:
     - '3000:80'
   sage:
